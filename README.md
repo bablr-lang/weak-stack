@@ -5,9 +5,9 @@ An immutable stack implementation which uses weakMaps to track frames. Usage is 
 ## Usage
 
 ```js
-import { WeakStack } from '@bablr/weak-stack';
+import { WeakStackFrame } from '@bablr/weak-stack';
 
-class PathStack extends WeakStack {
+class Path extends WeakStackFrame {
   constructor(reference, coverType) {
     this.reference = reference;
     this.coverType = coverType;
@@ -15,7 +15,7 @@ class PathStack extends WeakStack {
 }
 
 let s = {
-  path: PathStack.create('root', 'Fragment'),
+  path: Path.create('root', 'Fragment'),
 };
 
 assert(s.path.coverType === 'Fragment');
